@@ -3,10 +3,7 @@
     {
       "id": 1,
       "text": "Mow the loan",
-      "actualText": "Mow the loan",
-      "completed": true,
-      "isEdited": false,
-      "isSaveButtonDisabled": false
+      "completed": true
     },
     {
       "id": 2,
