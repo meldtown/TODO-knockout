@@ -1,0 +1,31 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Mow the loan",
+      "actualText": "Mow the loan",
+      "completed": true,
+      "isEdited": false,
+      "isSaveButtonDisabled": false
+    },
+    {
+      "id": 2,
+      "completed": false,
+      "text": "Buy milk"
+    },
+    {
+      "id": 3,
+      "text": "Check emails",
+      "completed": true
+    },
+    {
+      "text": "Learn Javascript",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "completed": true,
+      "text": "Earn money"
+    }
+  ]
+}

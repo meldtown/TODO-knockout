@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Knockout TODOS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div id="root">
+  <h1>TODO list</h1>
+  <div data-bind="if: totalCount">
+    <label for="filter">Filter TODOS</label>
+    <select name="filter" id="filter" data-bind="options: filters, value: currentFilter"></select>
+    <label for="sort">Sort TODOS</label>
+    <select name="sort" id="sort" data-bind="options: sortOptions, value: currentSortOption"></select>
+  </div>
+  <ul data-bind="foreach: sortedAndFilteredTodos">
+    <li>
+      <div data-bind="if: isEdited">
+        <input type="text" data-bind="value: actualText, valueUpdate: 'input'">
+        <div>
+          <button data-bind="disable: isSaveButtonDisabled, click: save">Save</button>
+          <button data-bind="click: cancel">Cancel</button>
+        </div>
+      </div>
+      <div data-bind="ifnot: isEdited">
+        <div class="flex">
+          <span data-bind="text: text"></span>
+          <input type="checkbox" data-bind="event: {change: toggle}, checked: completed">
+        </div>
+        <div>
+          <button data-bind="click: edit">Edit</button>
+          <button data-bind="click: remove">Delete</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <p data-bind="if: totalCount">
+    You have
+    <mark data-bind="text: totalCount"></mark>
+    todos
+  </p>
+  <p data-bind="ifnot: totalCount">
+    You don't have any TODO
+  </p>
+  <form data-bind="event: {submit: saveTodo}">
+    <label>
+      Add todo <input data-bind="value: addedTodo, valueUpdate: 'input'" type="text"><br>
+      <input type="submit" data-bind="disable: isAddButtonDisabled">
+    </label>
+  </form>
+</div>
+
+<script src="vendor/axios/dist/axios.js"></script>
+<script src="vendor/knockout/dist/knockout.js"></script>
+<script src="app.js"></script>
+<script>
+  const root = document.getElementById('root');
+  const model = new Model();
+  ko.applyBindings(model, root);
+</script>
+</body>
+</html>

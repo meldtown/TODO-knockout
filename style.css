@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    padding: 10px;
+    font-family: Monaco;
+    font-size: 1.2em;
+}
+
+ul {
+    max-width: 300px;
+    list-style: none;
+    margin: 20px;
+}
+
+li {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(216, 166, 199);
+    color: #fff;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+}
+
+mark {
+    padding: 3px;
+}
+
+form {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid steelblue;
+    border-radius: 3px;
+}
+
+button {
+    padding: 0 10px;
+}
